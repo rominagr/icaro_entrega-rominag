@@ -1,10 +1,137 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --primary-dark: #0a0a0a;
+    --light-gray: #f8f9fa;
+    --border-color: #e0e0e0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: var(--primary-dark);
+}
+
+/* Encabezado Estilo "Commission that speaks" */
+header {
+    background-color: var(--primary-dark);
+    padding: 100px 0;
+    color: white;
+    text-align: left;
+}
+
+header h1 {
+    font-family: "Montserrat Alternates", sans-serif;
+
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+header h2 {
+    font-family: "Montserrat Alternates", sans-serif;
+
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+header h1 span {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 400;
+    display: block;
+    color: #888;
+}
+
+section h2{
+     font-family: "Montserrat Alternates", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.calculadora{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+
+
+/* Botones tipo "Pill" (píldora) */
+.btn-outline-dark, .btn-outline-secondary, .btn-dark {
+    border-radius: 50px !important;
+    padding: 20px 30px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Personalización de los Radio Buttons como la imagen */
+.btn-check:checked + .btn-outline-secondary,
+.btn-check:checked + .btn-outline-dark {
+    background-color: var(--primary-dark) !important;
+    color: white !important;
+    border-color: var(--primary-dark) !important;
+}
+
+.btn-outline-secondary {
+    border-color: var(--border-color);
+    background-color: var(--light-gray);
+    color: #666;
+}
+
+/* Inputs y Textareas */
+.form-control {
+    border-radius: 50px;
+    padding: 15px 25px;
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+}
+
+textarea.form-control {
+    border-radius: 20px;
+}
+
+/* Card de Resumen (Izquierda) */
+.card {
+    border: none;
+    border-radius: 20px;
+}
+
+.sticky-top {
+    top: 20px;
+}
+
+#totalFinal {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -1px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-dark) !important;
+    padding: 40px 0 !important;
+}
+
+.textofooter {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Ajustes de espaciado */
+.fw-bold {
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+}
 
 /*partes oscuras de la pagina*/
 .bg-dark{
 	background-color: #000000
 	!important;
 }
+
 .titulos{
         font-family: "Montserrat Alternates", sans-serif;
         font-weight: 800;
@@ -90,3 +217,163 @@
 
 
 /*ANIMACION DE PARTE DE ARRIBA*/
+.tarjeta-interactiva {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* El overlay visible por defecto */
+.tarjeta-interactiva .card-img-overlay {
+    background: rgba(0, 0, 0, 0.4); /* Oscurece un poco la imagen para leer mejor */
+    transition: opacity 0.4s ease-in-out, visibility 0.4s;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Al pasar el mouse (hover), el overlay se vuelve invisible */
+.tarjeta-interactiva:hover .card-img-overlay {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+
+
+/* Contenedor del botón de imagen */
+.btn-estilo-visual {
+    position: relative;
+    height: 150px; /* Ajusta la altura a tu gusto */
+    border: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px !important;
+}
+
+/* La imagen de fondo */
+.btn-estilo-visual .img-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen ocupe todo el espacio sin deformarse */
+    z-index: 1;
+    transition: transform 0.4s ease;
+}
+
+/* El Overlay oscuro */
+.btn-estilo-visual .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.788); /* Oscuro por defecto */
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+/* El Texto sobre la imagen */
+.btn-estilo-visual .btn-text {
+    position: relative;
+    z-index: 3;
+    color: #ffffff;
+    font-family: var(--font-alt);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- LÓGICA DE SELECCIÓN --- */
+
+/* Cuando NO está seleccionado: mantiene el overlay oscuro */
+.btn-check + .btn-estilo-visual .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Cuando ESTÁ seleccionado: el overlay se aclara y la imagen puede escalarse */
+.btn-check:checked + .btn-estilo-visual .overlay {
+    background-color: rgba(0, 0, 0, 0.2); /* Mucho más claro */
+}
+
+.btn-check:checked + .btn-estilo-visual .img-bg {
+    transform: scale(1.1); /* Zoom sutil al estar seleccionado */
+}
+
+/* Efecto Hover opcional */
+.btn-estilo-visual:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo para el botón de cancelar con color bordó */
+#btnAplicar {
+    background-color: #4a0000 !important; /* Bordó oscuro */
+    border-color: #4a0000 !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+}
+
+#btnAplicar:hover {
+    background-color: #330000 !important; /* Un tono más oscuro al pasar el mouse */
+    border-color: #330000 !important;
+    transform: translateY(-2px); /* Pequeña elevación */
+    box-shadow: 0 4px 15px rgba(74, 0, 0, 0.3);
+}
+
+
+
+
+/*navbar*/
+
+/* Espaciado entre letras para el look profesional */
+.letter-spacing-2 {
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-family: var(--font-alt); /* Montserrat Alternates */
+}
+
+/* Estilo de los enlaces del navbar */
+.nav-custom-link {
+    font-family: var(--font-alt);
+    font-size: 0.75rem; /* Letra pequeña como en la imagen */
+    font-weight: 500;
+    color: #666 !important;
+    letter-spacing: 1.5px;
+    padding: 0.5rem 1.2rem !important; /* Espacio entre palabras */
+    transition: color 0.3s ease;
+}
+
+.nav-custom-link:hover {
+    color: #000 !important;
+}
+
+/* Navbar fondo ultra blanco y borde sutil */
+.navbar {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+
+/* Ajuste del brand */
+.navbar-brand {
+    font-size: 1rem;
+    font-weight: 800 !important;
+}
+
+/* Quitar el outline azul de Bootstrap en móviles */
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+.card {
+    border-radius: 0 !important;
+}
+
+/* Si quieres quitar también el redondeo de las imágenes dentro de las tarjetas */
+.card-img, 
+.card-img-top, 
+.tarjeta-interactiva img {
+    border-radius: 0 !important;
+}

@@ -1,0 +1,217 @@
+<!--en el store iria
+
+los productos que se tienen en stock(los agrego manual porque no tengo backend donde poder subirlos todavia)
+estos productos tienen categorias que van a ir conectados a un array con la lista de categorias 
+
+esta categoria va a estar en un sidebar en la pagina donde el usuario puede explorar cada categoria con los productos especificos
+
+los productos los presento en cards cada car tiene el nombre del producto y voy a generar una pagina para que se vea la informacion del producto al menos de uno
+
+ademas de eso hay un boton que va a tener un id que va a generar una funcion que agrege el producto al carrito (push) este push genera una suma que genera 
+el total de lo que va agregando el usuario al carrito
+
+deberia agregar un boton de agregar mas cantidades de este producto, esto iria en la pagina especifica del producto porque sino seria mucha informacion adentro de la card
+que se ve en la pagina del store
+
+despues agregar un banner que diga store, cambiar el tama;o de la imagen o hacer una nueva(no quier sobrecargar la carpeta del proyecto con muchas imagenes)
+
+generar ids para las partes importantes, ver como colapsar el sidebar con js(no se muy bien si entendi eso)
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art Paradox</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="store.css">
+    
+</head>
+
+<body>
+   <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+
+    
+        <div class="container-fluid ">
+          <a class="navbar-brand" href="#">
+          <img class=logo src="logotipo@2x.png" alt="logo"> 
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <img class="logo" src="logo@2x.png">
+                </a>
+                <ul class="dropdown-menu">
+                   <li><a class="dropdown-item" href="index.html">Inicio</a></li>
+                   <li> <hr class="dropdown-divider"> </li>
+                  <li><a class="dropdown-item" href="contenido.html">Ilustración</a></li>
+                   <li> <hr class="dropdown-divider"> </li>
+                  <li><a class="dropdown-item" href="#">Diseño</a></li>
+                    <li><hr class="dropdown-divider"></li>
+
+                  <li><a class="dropdown-item" href="#">Store</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="contacto.html">Contacto</a></li>
+                </ul>
+              </li>
+    
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+      
+  <header>
+<div class="row mb-4"> 
+    <div class="card border-0 p-0">
+        <img src="imagen.png" class="card-img" alt="Banner Store" style="height: 300px; object-fit: cover;">
+        
+        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+            <h1 class="text-white fw-bold display-1" style="letter-spacing: 5px;">STORE</h1>
+        </div>
+    </div>
+</div>
+      </header>
+        
+      
+<main>
+
+  <div class="row ps-3 pe-3 pt-3">
+    <div class=" col-mb-2">
+   <button class="rounded-end bg-black text-white w-25 mb-3" id="menu-toggle">
+                CATEGORIAS
+            </button>
+  
+    </div>
+    <div class=" col-mb-6"></div>
+  </div>
+
+
+<div class="d-flex align-items-start" id="wrapper">
+    <div class="rounded bg-black text-white" id="sidebar-wrapper">
+        <div class="p-3">
+           
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="#" class="nav-link text-white">Caravanas</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white">Llaveros</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white">Collares</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white">Prints</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <div id="page-content-wrapper" class="w-100 p-4">
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col"><div class="card h-100 shadow-sm"><div class="card h-100 border-0 shadow-sm">
+                        <img src="" class="card-img-top" alt="Producto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase">producto</h5>
+                            <p class="fw-bold">$350</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div></div></div>
+                <div class="col"><div class="card h-100 shadow-sm"><div class="card h-100 border-0 shadow-sm">
+                        <img src="" class="card-img-top" alt="Producto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase">producto</h5>
+                            <p class="fw-bold">$350</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div></div></div>
+                <div class="col"><div class="card h-100 shadow-sm"><div class="card h-100 border-0 shadow-sm">
+                        <img src="" class="card-img-top" alt="Producto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase">producto</h5>
+                            <p class="fw-bold">$350</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div></div></div>
+                    <div class="col"><div class="card h-100 shadow-sm"><div class="card h-100 border-0 shadow-sm">
+                        <img src="" class="card-img-top" alt="Producto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase">producto</h5>
+                            <p class="fw-bold">$350</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div></div></div>
+                    <div class="col"><div class="card h-100 shadow-sm"><div class="card h-100 border-0 shadow-sm">
+                        <img src="" class="card-img-top" alt="Producto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase">producto</h5>
+                            <p class="fw-bold">$350</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div></div></div>
+                    <div class="col"><div class="card h-100 shadow-sm"><div class="card h-100 border-0 shadow-sm">
+                        <img src="" class="card-img-top" alt="Producto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase">producto</h5>
+                            <p class="fw-bold">$350</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div></div></div>
+                    <div class="col"><div class="card h-100 shadow-sm"><div class="card h-100 border-0 shadow-sm">
+                        <img src="" class="card-img-top" alt="Producto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase">producto</h5>
+                            <p class="fw-bold">$350</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div></div></div>
+                    <div class="col"><div class="card h-100 shadow-sm"><div class="card h-100 border-0 shadow-sm">
+                        <img src="" class="card-img-top" alt="Producto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase">producto</h5>
+                            <p class="fw-bold">$350</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div></div></div>
+                    <div class="col"><div class="card h-100 shadow-sm"><div class="card h-100 border-0 shadow-sm">
+                        <img src="" class="card-img-top" alt="Producto">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase">producto</h5>
+                            <p class="fw-bold">$350</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div></div></div>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+  
+</main>
+    
+    
+    <footer class="bg-dark p-3 col-md-12 ">
+      <div class="container-fluid align-items-center justify-content-center">
+        <p class="textofooter justify-content-center">  The Art Paradox 2026 - Todos los derechos reservados</p>
+    </div>
+    </footer>
+    <!--los scripts siempre se colocan al final de la pagina
+    por que si algo falla impide que no se trabe la pagina-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="store.js" ></script>
+</body>
+    
+    
+    </html>
