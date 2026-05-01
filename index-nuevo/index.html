@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art Paradox</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+ 
+
+ 
+<!-- dots -->
+<div class="nav-dots" id="nav-dots">
+  <div class="ndot active"  onclick="goTo('#hero')"        title="Inicio"></div>
+  <div class="ndot"         onclick="goTo('#about')"       title="About"></div>
+  <div class="ndot"         onclick="goTo('#ilustracion')" title="Ilustración"></div>
+  <div class="ndot"         onclick="goTo('#grafico')"     title="Diseño Gráfico"></div>
+  <div class="ndot"         onclick="goTo('#tipografia')"  title="Tipografía"></div>
+  <div class="ndot"         onclick="goTo('#uxui')"        title="UX/UI"></div>
+  <div class="ndot"         onclick="goTo('#tareas')"      title="Tareas"></div>
+  <div class="ndot"         onclick="goTo('#contacto')"    title="Contacto"></div>
+</div>
+ 
+<!-- NAVBAR -->
+<nav id="nav">
+      <a class="navbar-brand fw-bold letter-spacing-2" href="#">
+      <img class=logo src="logotipo@2x.png" alt="logo"> 
+    </a>
+  <ul class="nav-menu">
+    <li><a href="#ilustracion">Ilustración</a></li>
+    <li><a href="#grafico">Gráfico</a></li>
+    <li><a href="#tipografia">Tipografía</a></li>
+    <li><a href="#uxui">UX / UI</a></li>
+    <li><a href="#tareas">Tareas</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+ 
+ 
+<!-- ══ HERO ════════════ -->
+<section id="hero">
+  <div class="hero-bg-text" aria-hidden="true">ROMINA&nbsp;Garcia&nbsp;Portfolio</div>
+  <div class="hero-content">
+    <div class="hero-row">
+      <div class="hero-title-wrap">
+        <h1 class="big-title r">
+          Diseño<br/>
+          <em>Ilustración</em><br/>
+          Comunicación Visual.
+        </h1>
+      </div>
+      <div class="hero-meta r rd2">
+        <p class="hero-desc">
+          Portfolio de diseño creativo — ilustración, gráfico, tipografía y experiencias digitales hechas con intención.
+        </p>
+        <div class="hero-scroll">
+          <div class="scroll-line"></div>
+          Scroll para explorar
+        </div>
+      </div>
+    </div>
+    <div class="hero-line r rd3"></div>
+    <div class="hero-tags r rd4">
+      <span class="htag">Ilustración</span>
+      <span class="htag">Diseño Gráfico</span>
+      <span class="htag">Tipografía</span>
+      <span class="htag">UX / UI</span>
+      <span class="htag">Branding</span>
+    </div>
+  </div>
+</section>
+ 
+ 
+<!--  ABOUT-->
+<section id="about">
+  <div class="section-num" aria-hidden="true">00</div>
+  <div class="about-inner">
+    <div class="about-statement r rl">
+      Diseño no es decoración.<br/>
+      Es <strong>resolver</strong> con forma,<br/>
+      comunicar con <strong>precisión</strong>,<br/>
+      emocionar con <strong>método</strong>.
+    </div>
+    <div class="about-right">
+      <p class="about-bio r rr rd1">
+        Diseñadora creativa y estudiante con experiencia construyendo identidades visuales,
+        sistemas tipográficos y experiencias digitales. 
+      
+      </p>
+      <div class="stats-row r rr rd2">
+        <div class="stat-item">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Proyectos</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Clientes</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">2</span>
+          <span class="stat-label">Años</span>
+        </div>
+      </div>
+      <div class="skills-list r rr rd3">
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">Illustrator</span>
+        <span class="skill-tag">InDesign</span>
+        <span class="skill-tag">Prototyping</span>
+        <span class="skill-tag">Brand Systems</span>
+        <span class="skill-tag">HTML/CSS</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ 
+<!-- SECCIÓN FUSIONADA: PORTFOLIO & GALERÍA -->
+<section id="galeria">
+  <div class="section-num">01</div>
+  <h2 class="big-title r rd1">Ilus<em>tra</em><br/>ción</h2>
+  
+  <div class="gallery-layout r rd2">
+    <!-- El visor principal donde se verán las obras -->
+    <div class="gallery-main" id="gallery-main">
+      <div class="gm-inner" id="gm-inner">
+        <!-- La imagen activa se carga aquí vía JS -->
+      </div>
+      <div class="gallery-main-caption" id="gm-caption"></div>
+      
+      <button class="gal-nav gal-prev" onclick="galleryNav(-1)">❮</button>
+      <button class="gal-nav gal-next" onclick="galleryNav(1)">❯</button>
+      
+      <div class="gal-counter" id="gal-counter">1 / 6</div>
+    </div>
+
+    <!-- Miniaturas que antes eran el grid de ilustración -->
+    <div class="gallery-thumbs" id="gallery-thumbs">
+      <!-- Se generan automáticamente con el script -->
+    </div>
+  </div>
+</section>
+ 
+ 
+<!-- ══ DISEÑO GRÁFICO  -->
+<section id="grafico">
+  <div class="section-num" aria-hidden="true">02</div>
+  <div class="eyebrow r">Sección 02</div>
+  <h2 class="big-title r rd1">
+    Diseño<br/>
+    <em>Gráfico</em>
+  </h2>
+ 
+  <div class="grafico-layout">
+    <div class="grafico-left">
+ 
+      <div class="grafico-card r rl rd1">
+        <div class="gc-num">001</div>
+        <div class="gc-title">Identidad Visual Systema</div>
+        <div class="gc-tags">
+          <span class="gc-tag">Branding</span>
+          <span class="gc-tag">Logotipo</span>
+          <span class="gc-tag">Paleta</span>
+        </div>
+      </div>
+ 
+      <div class="grafico-card r rl rd2">
+        <div class="gc-num">002</div>
+        <div class="gc-title">Packaging Editorial</div>
+        <div class="gc-tags">
+          <span class="gc-tag">Print</span>
+          <span class="gc-tag">Editorial</span>
+          <span class="gc-tag">Maquetación</span>
+        </div>
+      </div>
+ 
+      <div class="grafico-card r rl rd3">
+        <div class="gc-num">003</div>
+        <div class="gc-title">Campaña Gráfica</div>
+        <div class="gc-tags">
+          <span class="gc-tag">Poster</span>
+          <span class="gc-tag">Campaña</span>
+          <span class="gc-tag">Digital</span>
+        </div>
+      </div>
+ 
+      <div class="grafico-card r rl rd4">
+        <div class="gc-num">004</div>
+        <div class="gc-title">Sistema de Iconografía</div>
+        <div class="gc-tags">
+          <span class="gc-tag">Iconos</span>
+          <span class="gc-tag">Sistema</span>
+          <span class="gc-tag">UI Kit</span>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <div class="grafico-right r rr">
+      <div class="gr-preview">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <rect x="20" y="20" width="160" height="160" stroke="rgba(245,245,240,.3)" stroke-width="1"/>
+          <rect x="40" y="40" width="120" height="120" stroke="rgba(245,245,240,.15)" stroke-width=".5" transform="rotate(15,100,100)"/>
+          <circle cx="100" cy="100" r="50" stroke="rgba(245,245,240,.2)" stroke-width="1"/>
+          <line x1="20" y1="100" x2="180" y2="100" stroke="rgba(245,245,240,.1)" stroke-width=".5"/>
+          <line x1="100" y1="20" x2="100" y2="180" stroke="rgba(245,245,240,.1)" stroke-width=".5"/>
+          <circle cx="100" cy="100" r="8" fill="rgba(245,245,240,.35)"/>
+        </svg>
+      </div>
+      <div class="gr-label">Preview Interactivo</div>
+      <p class="gr-desc">
+        Cada proyecto gráfico parte de una premisa conceptual clara. La forma sirve al mensaje,
+        la paleta sirve a la emoción, el sistema sirve a la escalabilidad.
+      </p>
+    </div>
+  </div>
+</section>
+ 
+ 
+<!--  TIPOGRAFÍA -->
+<section id="tipografia">
+  <div class="section-num" aria-hidden="true">03</div>
+  <div class="eyebrow r">Sección 03</div>
+  <h2 class="big-title r rd1" style="color:var(--white)">
+    Tipo<em>gra</em><br/>fía
+  </h2>
+ 
+  <div class="typo-showcase r rd2">
+ 
+    
+ 
+    <div class="typo-row">
+      <span class="typo-index">02</span>
+      <span class="typo-sample ts-reg">Montserrat Alternates Regular</span>
+      <div class="typo-meta"><span class="tm-weight">400 · Regular</span><span class="tm-size">16–24px</span></div>
+    </div>
+ 
+  
+ 
+  </div>
+ 
+  <div class="alphabet-wrap r rd3">
+    <div class="alphabet-ticker" aria-hidden="true">
+      A B C D E F G H I J K L M N O P Q R S T U V W X Y Z &nbsp;&nbsp;
+      A B C D E F G H I J K L M N O P Q R S T U V W X Y Z &nbsp;&nbsp;
+    </div>
+  </div>
+ 
+</section>
+ 
+ 
+<!--  UX/UI-->
+<section id="uxui">
+  <div class="section-num" aria-hidden="true">04</div>
+ 
+  <div class="uxui-header">
+    <div>
+      <div class="eyebrow r">Sección 04</div>
+      <h2 class="big-title r rd1">
+        UX <em>&</em><br/>UI Design
+      </h2>
+    </div>
+    <p class="uxui-intro r rr rd2">
+      Interfaces que equilibran la claridad funcional con la distinción estética.
+      Diseño centrado en el usuario, construido sobre sistemas coherentes y escalables.
+    </p>
+  </div>
+ 
+  <div class="uxui-projects">
+ 
+    <div class="ux-project r rd1">
+      <span class="ux-num">01</span>
+      <span class="ux-title">Dashboard Analytics</span>
+      <div class="ux-tags">
+        <span class="ux-tag">Figma</span>
+        <span class="ux-tag">Data Viz</span>
+        <span class="ux-tag">B2B SaaS</span>
+      </div>
+      <div class="ux-arrow">
+        Ver proyecto
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </div>
+    </div>
+ 
+    
+ 
+ 
+  <div class="uxui-mockups">
+    <div class="mockup-frame r rl rd2">
+      <div class="mockup-bar">
+        <div class="mbar-dot"></div>
+        <div class="mbar-dot"></div>
+        <div class="mbar-dot"></div>
+      </div>
+      <div class="mockup-body">
+        <div class="mb-hero"></div>
+        <div class="mb-line med"></div>
+        <div class="mb-line short"></div>
+        <div class="mb-cards">
+          <div class="mb-card"></div>
+          <div class="mb-card"></div>
+          <div class="mb-card"></div>
+          <div class="mb-card"></div>
+        </div>
+      </div>
+      <div class="mockup-label">Dashboard Analytics</div>
+    </div>
+    <div class="mockup-frame r rd3">
+      <div class="mockup-bar">
+        <div class="mbar-dot"></div>
+        <div class="mbar-dot"></div>
+        <div class="mbar-dot"></div>
+      </div>
+      <div class="mockup-body">
+        <div class="mb-line med" style="height:20px;margin-bottom:.5rem"></div>
+        <div class="mb-hero" style="height:45%"></div>
+        <div class="mb-line short"></div>
+        <div class="mb-line med"></div>
+        <div class="mb-cards" style="grid-template-columns:1fr 1fr 1fr">
+          <div class="mb-card"></div>
+          <div class="mb-card"></div>
+          <div class="mb-card"></div>
+        </div>
+      </div>
+      <div class="mockup-label">App Bienestar</div>
+    </div>
+    <div class="mockup-frame r rr rd4">
+      <div class="mockup-bar">
+        <div class="mbar-dot"></div>
+        <div class="mbar-dot"></div>
+        <div class="mbar-dot"></div>
+      </div>
+      <div class="mockup-body">
+        <div class="mb-line short" style="height:14px"></div>
+        <div class="mb-cards" style="grid-template-columns:1fr;gap:.5rem">
+          <div class="mb-card" style="height:60px"></div>
+          <div class="mb-card" style="height:60px"></div>
+          <div class="mb-card" style="height:60px"></div>
+        </div>
+        <div class="mb-line med"></div>
+        <div class="mb-hero" style="height:20%"></div>
+      </div>
+      <div class="mockup-label">E-commerce</div>
+    </div>
+  </div>
+ 
+</section>
+ 
+ 
+<!--  TAREAS  -->
+<section id="tareas">
+  <div class="section-num" aria-hidden="true">05</div>
+  <div class="eyebrow r">Sección 05</div>
+  <h2 class="big-title r rd1">
+    Task<br/><em>Board</em>
+  </h2>
+ 
+  <div class="tareas-layout r rd2">
+    <!-- Input -->
+    <div class="task-input-wrap">
+      <input
+        type="text"
+        id="task-input"
+        class="task-input"
+        placeholder="Nueva tarea..."
+        maxlength="80"
+        onkeydown="if(event.key==='Enter') addTask()"
+      />
+      <button class="task-add-btn" onclick="addTask()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+      </button>
+    </div>
+ 
+    <!-- Filtros -->
+    <div class="task-filters">
+      <button class="tf-btn active" data-filter="all"       onclick="filterTasks(this)">Todas</button>
+      <button class="tf-btn"        data-filter="pending"   onclick="filterTasks(this)">Pendientes</button>
+      <button class="tf-btn"        data-filter="done"      onclick="filterTasks(this)">Completadas</button>
+    </div>
+ 
+    <!-- Lista -->
+    <ul class="task-list" id="task-list"></ul>
+ 
+    <!-- Footer  -->
+    <div class="task-footer">
+      <span id="task-counter">0 tareas pendientes</span>
+      <button class="tf-clear" onclick="clearDone()">Limpiar completadas</button>
+    </div>
+  </div>
+</section>
+
+
+ 
+ 
+<!--CONTACTO -->
+<section id="contacto">
+  <div class="contact-inner">
+    <p class="contact-eyebrow r">¿Trabajamos juntos?</p>
+    <h2 class="contact-title r rd1">
+      Hagamos<br/>
+      algo <em>creativo</em>
+    </h2>
+    <div class="contact-line r rd2"></div>
+    <a href="mailto:hola@studio.design" class="contact-email r rd3">rominagr@gmail.com</a>
+    <div class="contact-socials r rd4">
+      <a href="#" class="csocial">Instagram</a>
+      <a href="#" class="csocial">Behance</a>
+      <a href="#" class="csocial">LinkedIn</a>
+    </div>
+  </div>
+</section>
+ <section id="contacto">
+  <div class="section-num" aria-hidden="true">07</div>
+  <div class="eyebrow r">Sección 07</div>
+  <h2 class="big-title r rd1" style="color:var(--white)">
+    Contacto <em>&</em><br/>Comisiones
+  </h2>
+ 
+  <div class="contacto-grid r rd2">
+ 
+    <!-- ── Columna Izquierda: Calculadora ── -->
+    <div class="calc-col">
+ 
+     <div class="row">
+<!-- Columna Izquierda: Calculadora -->
+            <div class="col--md-12 ">
+                <div class="card shadow-sm p-4 mb-4">
+                  <div class="row">
+                    <div class="col-md-11 pt-3"> <h2 class="h4 mb-4 calculadora"><i class="bi bi-brush"></i> CALCULADORA DE COMISIONES</h2></div>
+                   <div class="col-md-1 "> <img class=logo src="logo@2x.png" alt="logo"> </div>
+                    <h6 class="p-4">Con esta herramienta puede calcular la propuesta que desea que realice</h6>
+              </div>
+  <form>                 
+ <!-- Estilo Visual precio color-->
+                    <label class="form-label fw-bold">Estilo Visual</label>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <input type="radio" class="btn-check" name="estilo" id="color" value="color" checked>
+                            <label class="btn btn-outline-secondary w-100 p-3" for="color">
+                                <img src="color.png" class="img-fluid mb-2 rounded" alt="Full Color">
+                                <div>Full Color</div>
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="radio" class="btn-check" name="estilo" id="bn" value="bn">
+                            <label class="btn btn-outline-secondary w-100 p-3" for="bn">
+                                <img src="byn.png" class="img-fluid mb-2 rounded" alt="blanco y negro">
+                                <div>Blanco & Negro</div>
+                            </label>
+                        </div>
+ <!-- Fondo -->
+            <div class="mb-4">
+                <label class="form-label fw-bold">FONDO DE LA OBRA</label>
+                <div class="row g-2">
+                    <div class="col-6">
+                        <input type="radio" class="btn-check" name="fondo" id="sin_fondo" value="sin" checked>
+                        <label class="btn btn-outline-dark w-100 py-3" for="sin_fondo">Simple</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="radio" class="btn-check" name="fondo" id="con_fondo" value="con">
+                        <label class="btn btn-outline-dark w-100 py-3" for="con_fondo">Complejo</label>
+                    </div>
+                </div>
+            </div>
+<!-- tecnica -->
+<div class="mb-4">
+    <label class="form-label fw-bold">TECNICA</label>
+    <div class="row g-2">
+        <div class="col-6">
+            <input type="radio" class="btn-check" name="tecnica" id="acuarela" value="tradicional" checked>
+            <label class="btn btn-outline-dark w-100 py-3" for="acuarela">
+                <i class="bi bi-palette"></i> Acuarela / Tradicional
+            </label>
+        </div>
+        <div class="col-6">
+            <input type="radio" class="btn-check" name="tecnica" id="digital_art" value="digital">
+            <label class="btn btn-outline-dark w-100 py-3" for="digital_art">
+                <i class="bi bi-laptop"></i> Digital
+            </label>
+        </div>
+    </div>
+</div>
+                        
+ <!-- Contador de Personajes -->
+                         <label class="form-label fw-bold">Cantidad de Personajes</label>
+                    <div class="d-flex align-items-center mb-4">
+                        <button type="button" class="btn btn-outline-dark rounded-circle" id="btnRestar">-</button>
+<span class="mx-4 fs-3 fw-bold" id="cantidadPersonajes">01</span>
+<button type="button" class="btn btn-outline-dark rounded-circle" id="btnSumar">+</button>
+
+                    </div>
+ <!-- Dimensiones -->
+    <label class="form-label fw-bold">Dimensiones</label>
+    <div class="row g-2 mb-4 text-center">
+        <div class="col-4">
+            <input type="radio" class="btn-check" name="tamano" id="a5" value="a5" checked>
+            <label class="btn btn-outline-secondary w-100 py-3" for="a5"><small>A5<br>14.8 x 21 cm</small></label>
+        </div>
+        <div class="col-4">
+            <input type="radio" class="btn-check" name="tamano" id="a4" value="a4">
+            <label class="btn btn-outline-secondary w-100 py-3" for="a4"><small>A4<br>21 x 29.7 cm</small></label>
+        </div>
+        <div class="col-4">
+            <input type="radio" class="btn-check" name="tamano" id="a3" value="a3">
+            <label class="btn btn-outline-secondary w-100 py-3" for="a3"><small>A3<br>29,7 x 42 cm</small></label>
+        </div>
+    </div>
+
+    <!-- Notas Adicionales -->
+    <div class="mb-3">
+        <label for="notas" class="form-label fw-bold">ADDITIONAL NOTES</label>
+        <textarea class="form-control" id="notas" rows="3" placeholder="Describe specific details..."></textarea>
+    </div>
+      <!-- Carga de Referencias -->
+                    <div class="mb-4">
+                        <label for="referencias" class="form-label fw-bold">Subir referencia</label>
+                        <input type="file" class="form-control" id="referencias" name="referencias" accept="image/*,.pdf" multiple>
+                        <div class="form-text">Puedes subir múltiples imágenes o archivos PDF (máx. 5MB).</div>
+                    </div>
+    <div class="card shadow-sm p-4 mb-4">
+    <!-- Método de Entrega (Toggle) -->
+    <label class="form-label fw-bold">Metodo de Envio</label>
+    <div class="btn-group w-100 mb-4" role="group">
+        <input type="radio" class="btn-check" name="metodo" id="envio" value="envio" checked>
+        <label class="btn btn-outline-dark" for="envio">Envio</label>
+        <input type="radio" class="btn-check" name="metodo" id="retiro" value="retiro">
+        <label class="btn btn-outline-dark" for="retiro">Retiro</label>
+    </div>
+
+</div>
+
+
+<!--Resumen de la obra-->
+                         <div class="card shadow-sm p-4 sticky-top">
+                    <h3 class="h5 border-bottom pb-2">Resumen de la Obra</h3>
+                    <ul class="list-unstyled mt-3" id="listaResumen">
+                        <li class="d-flex justify-content-between"><span>Ilustración Base</span> <span id="res-base">$500</span></li>
+                        <li class="d-flex justify-content-between"><span>Personajes extra</span> <span id="res-extra">$0</span></li>
+                    </ul>
+                   
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="h4">Total</span>
+                        <span class="h2 fw-bold text-success" id="totalFinal">$0.00</span>
+                    </div>
+                    <!-- Botón de Acción -->
+                    <div class="d-grid mt-4">
+                        <button class="btn btn-dark btn-lg" id="btnPagar">Pagar</button>
+                    </div>
+                </div>
+            </div>
+<!-- Botón de Acción -->
+                <div class="d-grid mt-4">
+    <button type="button" class="btn btn-dark btn-lg" id="btnAplicar">
+        <label>CANCELAR SELECCIONES</label>
+    </button>
+</div>
+    </form> 
+           
+            
+        </div>
+    </div>
+
+
+
+
+<footer>
+  <span class="ft-brand">Romina Garcia ✦ Portfolio — 2026</span>
+</footer>
+ 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="index.js" ></script>
+
+</body>
+</html>
