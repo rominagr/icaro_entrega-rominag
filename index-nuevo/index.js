@@ -6,19 +6,19 @@ document.querySelectorAll('a, button, .ilust-item, .grafico-card, .ux-project, .
   el.addEventListener('mouseleave', () => { cur.classList.remove('hover'); ring.classList.remove('link'); });
 });
  
-/* ── Progress ────────────────────────── */
+/*  Progreso */
 const pb = document.getElementById('progress');
 window.addEventListener('scroll', () => {
   pb.style.width = (window.scrollY / (document.body.scrollHeight - innerHeight) * 100) + '%';
 });
  
-/* ── Navbar ──────────────────────────── */
+/*  Navbar */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 50));
  
 
 
-/* ── Nav dots ────────────────────────── */
+/*  Nav dots */
 const sections = ['#hero','#about','#ilustracion','#grafico','#tipografia','#uxui','#tareas','#galeria','#contacto'];
 const dots = document.querySelectorAll('.ndot');
  
@@ -34,7 +34,7 @@ const secObs = new IntersectionObserver(entries => {
 },{threshold:.35});
 sections.forEach(id => { const el=document.querySelector(id); if(el) secObs.observe(el); });
  
-/* ── Reveal ──────────────────────────── */
+/*  Reveal */
 const revObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); revObs.unobserve(e.target); }});
 },{threshold:.12});
@@ -43,9 +43,7 @@ document.querySelectorAll('.r, .rl, .rr').forEach(el => revObs.observe(el));
 /* Hero inmediato */
 document.querySelectorAll('#hero .r, #hero .rl, #hero .rr').forEach(el => el.classList.add('in'));
  
-/* ════════════════════════════════════════
-   TASK BOARD
-════════════════════════════════════════ */
+/*TASK BOARD */
 let tasks = [
   { id: 1, text: 'Diseñar nueva identidad visual', done: false },
   { id: 2, text: 'Revisar wireframes del proyecto UX', done: false },
@@ -134,7 +132,7 @@ function filterTasks(btn) {
  
 renderTasks();
  
-/* Register task interactions with cursor */
+/* Registrar tareas inactivas */
 function refreshCursorTargets() {
   document.querySelectorAll('.task-check, .task-del, .tf-btn, .task-add-btn, .tf-clear').forEach(el => {
     el.addEventListener('mouseenter', () => { cur.classList.add('hover'); ring.classList.add('link'); });
@@ -144,13 +142,14 @@ function refreshCursorTargets() {
 refreshCursorTargets();
 const origRenderTasks = renderTasks;
  
-/*  GALERÍA */
+/*GALERIA */
 
 const galleryData = [
-  { id: 1, title: 'Ilustración Botánica', category: 'Prints', img: 'ruta/foto1.jpg' },
-  { id: 2, title: 'Diseño de Joyería', category: 'Jewelry', img: 'ruta/foto2.jpg' },
-  { id: 3, title: 'Concept Art', category: 'Digital', img: 'ruta/foto3.jpg' },
-  { id: 4, title: 'Keychains Collection', category: 'Merch', img: 'ruta/foto4.jpg' }
+  { id: 1, title: 'Ilustracion Dualidad', category: 'Prints', img: 'pinpumpan.jpg' },
+  { id: 2, title: 'Diseño de Joyería', category: 'Prints', img: 'ruta/foto2.jpg' },
+  { id: 3, title: 'Concept Art', category: 'Digital', img: 'foto3.jpg' },
+  { id: 4, title: 'Merch', category: 'Merch', img: 'foto2.png' },
+  { id: 5, title: 'cosas', category: 'Merch', img: 'ruta/foto5.jpg' }
 ];
 
 let currentIndex = 0;
