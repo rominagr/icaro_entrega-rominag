@@ -1371,3 +1371,15 @@
     box-shadow: 0 4px 15px rgba(74, 0, 0, 0.3);
 }
 
+
+/*Tipografia*/
+
+@font-face {
+  font-family: 'Gridpunk';
+  src: url(gridpunk.otf) format('opentype');
+  font-style: normal;
+}
+
+.ts-reg, .alphabet-ticker {
+  font-family: 'Gridpunk', sans-serif;
+}

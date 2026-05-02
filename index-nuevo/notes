@@ -127,3 +127,31 @@ html
     <div class="gallery-thumbs" id="gallery-thumbs"></div>
   </div>
 </section>
+
+ <div class="tipografia-header">
+  <div class="section-num" aria-hidden="true">03</div>
+  <div class="eyebrow r">Sección 03</div>
+  <h2 class="big-title r rd1" style="color:var(--white)">
+    Tipo<em>gra</em><br/>fía
+  </h2>
+<p class="tipografia-intro r rr rd2">
+      Interfaces que equilibran la claridad funcional con la distinción estética.
+      Diseño centrado en el usuario, construido sobre sistemas coherentes y escalables.
+    </p>
+  </div>
+
+
+  <div class="section-num" aria-hidden="true">03</div>
+ 
+  <div class="tipografia">
+    <div>
+      <div class="eyebrow r">Sección 04</div>
+      <h2 class="big-title r rd1 style="color:var(--white)">
+        Tipo<em>gra</em><br/>fía
+      </h2>
+    </div>
+    <p class="tipografoa-intro r rr rd2">
+      Interfaces que equilibran la claridad funcional con la distinción estética.
+      Diseño centrado en el usuario, construido sobre sistemas coherentes y escalables.
+    </p>
+  </div>
