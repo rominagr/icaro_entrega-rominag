@@ -1,7 +1,7 @@
 
 
  
-document.querySelectorAll('a, button, .ilust-item, .grafico-card, .ux-project, .mockup-frame, .ndot').forEach(el => {
+document.querySelectorAll('a, button, .ilust-item, .grafico-card, .ux-project, .ndot').forEach(el => {
   el.addEventListener('mouseenter', () => { cur.classList.add('hover'); ring.classList.add('link'); });
   el.addEventListener('mouseleave', () => { cur.classList.remove('hover'); ring.classList.remove('link'); });
 });
@@ -19,7 +19,7 @@ window.addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 
 
 
 /*  Nav dots */
-const sections = ['#hero','#about','#ilustracion','#grafico','#tipografia','#uxui','#tareas','#galeria','#contacto'];
+const sections = ['#hero','#about','#ilustracion','#grafico','#tipografia','#uxui','#tareas','#galeria','#contacto','calculadora'];
 const dots = document.querySelectorAll('.ndot');
  
 function goTo(id){ document.querySelector(id).scrollIntoView({behavior:'smooth'}); }
@@ -146,10 +146,9 @@ const origRenderTasks = renderTasks;
 
 const galleryData = [
   { id: 1, title: 'Ilustracion Dualidad', category: 'Prints', img: 'pinpumpan.jpg' },
-  { id: 2, title: 'Diseño de Joyería', category: 'Prints', img: 'ruta/foto2.jpg' },
-  { id: 3, title: 'Concept Art', category: 'Digital', img: 'foto3.jpg' },
+  { id: 2, title: 'Unicornios', category: 'Prints', img: 'foto4.jpg' },
+  { id: 3, title: 'Concurso', category: 'Prints', img: 'foto3.jpg' },
   { id: 4, title: 'Merch', category: 'Merch', img: 'foto2.png' },
-  { id: 5, title: 'cosas', category: 'Merch', img: 'ruta/foto5.jpg' }
 ];
 
 let currentIndex = 0;
@@ -288,6 +287,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let personajesExtras = 0;
 
     function calcular() {
+
+        console.group("--- Cálculo de Presupuesto ---");
         // Capturar selecciones de radios (verificar que existan)
         const estiloElegido = document.querySelector('input[name="estilo"]:checked');
         const tecnicaElegida = document.querySelector('input[name="tecnica"]:checked');
@@ -346,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
             html += `<li class="d-flex justify-content-between mb-2"><span>Envío e Impresión (${tamano.toUpperCase()})</span> <b>+$${valorEnvio}</b></li>`;
         }
 
-        // --- 2. CÁLCULO DE IMPUESTOS (IVA URUGUAY) ---
+        // --- 2. CÁLCULO DE IMPUESTOS (IVA) ---
         const montoIva = subtotal * CONFIG.ivaUruguay;
         const totalConIva = subtotal + montoIva;
 
