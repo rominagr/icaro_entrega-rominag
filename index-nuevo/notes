@@ -155,3 +155,17 @@ html
       Diseño centrado en el usuario, construido sobre sistemas coherentes y escalables.
     </p>
   </div>
+
+  <nav id="nav">
+      <a class="navbar-brand fw-bold letter-spacing-2" href="#">
+      <img class=logo src="logotipo@2x.png" alt="logo"> 
+    </a>
+  <ul class="nav-menu">
+    <li><a href="#ilustracion">Ilustración</a></li>
+    <li><a href="#grafico">Gráfico</a></li>
+    <li><a href="#tipografia">Tipografía</a></li>
+    <li><a href="#uxui">UX / UI</a></li>
+    <li><a href="#tareas">Tareas</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>

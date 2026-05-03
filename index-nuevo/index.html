@@ -27,20 +27,35 @@
 </div>
  
 <!-- NAVBAR -->
-<nav id="nav">
-      <a class="navbar-brand fw-bold letter-spacing-2" href="#">
-      <img class=logo src="logotipo@2x.png" alt="logo"> 
+<nav class="navbar navbar-expand-lg fixed-top bg-light" id="nav">
+  <div class="container"> <a class="navbar-brand fw-bold letter-spacing-2" href="#">
+      <img class="logo" src="logotipo@2x.png" alt="logo" height="40"> 
     </a>
-  <ul class="nav-menu">
-    <li><a href="#ilustracion">Ilustración</a></li>
-    <li><a href="#grafico">Gráfico</a></li>
-    <li><a href="#tipografia">Tipografía</a></li>
-    <li><a href="#uxui">UX / UI</a></li>
-    <li><a href="#tareas">Tareas</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-</nav>
- 
+
+    <button class="navbar-toggler nav-toggler-custom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMain"
+            aria-controls="navbarMain"
+            aria-expanded="false"
+            aria-label="Abrir menú">
+        <span class="toggler-bar"></span>
+        <span class="toggler-bar"></span>
+        <span class="toggler-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link nav-custom-link" href="#ilustracion">Ilustración</a></li>
+        <li class="nav-item"><a class="nav-link nav-custom-link" href="#grafico">Gráfico</a></li>
+        <li class="nav-item"><a class="nav-link nav-custom-link" href="#tipografia">Tipografía</a></li>
+        <li class="nav-item"><a class="nav-link nav-custom-link" href="#uxui">UX / UI</a></li>
+        <li class="nav-item"><a class="nav-link nav-custom-link" href="#tareas">Tareas</a></li>
+        <li class="nav-item"><a class="nav-link nav-custom-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+  </div> </nav>
  
 <!-- ══ HERO ════════════ -->
 <section id="hero">
@@ -75,9 +90,9 @@
 </section>
  
  
-<!--  ABOUT-->
+<!--  biografia-->
 <section id="about">
-  <div class="section-num" aria-hidden="true">00</div>
+  
   <div class="about-inner">
     <div class="about-statement r rl">
       Diseño no es decoración.<br/>
@@ -86,25 +101,12 @@
       emocionar con <strong>método</strong>.
     </div>
     <div class="about-right">
-      <p class="about-bio r rr rd1">
+      <p class="about-bio r rr rd1 p-md-2">
         Diseñadora creativa y estudiante con experiencia construyendo identidades visuales,
         sistemas tipográficos y experiencias digitales. 
       
       </p>
-      <div class="stats-row r rr rd2">
-        <div class="stat-item">
-          <span class="stat-num">3</span>
-          <span class="stat-label">Proyectos</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">4</span>
-          <span class="stat-label">Clientes</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">2</span>
-          <span class="stat-label">Años</span>
-        </div>
-      </div>
+      
       <div class="skills-list r rr rd3">
         <span class="skill-tag">Figma</span>
         <span class="skill-tag">Illustrator</span>
@@ -115,6 +117,7 @@
       </div>
     </div>
   </div>
+
 </section>
  
  
@@ -123,9 +126,9 @@
   <div class="section-num">01</div>
   <h2 class="big-title r rd1">Ilus<em>tra</em><br/>ción</h2>
   
-  <div class="gallery-layout r rd2">
+  <div class="gallery-layout r rd2 ">
     <!-- El visor principal donde se verán las obras -->
-    <div class="gallery-main" id="gallery-main">
+    <div class="gallery-main " id="gallery-main">
       <div class="gm-inner" id="gm-inner">
         <!-- La imagen activa se carga aquí vía JS -->
       </div>
@@ -158,7 +161,7 @@
     <div class="grafico-left">
  
       <div class="grafico-card r rl rd1">
-        <div class="gc-num">001</div>
+        <div class="gc-num">01</div>
         <div class="gc-title">Identidad Visual Systema</div>
         <div class="gc-tags">
           <span class="gc-tag">Branding</span>
@@ -167,18 +170,8 @@
         </div>
       </div>
  
-      <div class="grafico-card r rl rd2">
-        <div class="gc-num">002</div>
-        <div class="gc-title">Packaging Editorial</div>
-        <div class="gc-tags">
-          <span class="gc-tag">Print</span>
-          <span class="gc-tag">Editorial</span>
-          <span class="gc-tag">Maquetación</span>
-        </div>
-      </div>
- 
       <div class="grafico-card r rl rd3">
-        <div class="gc-num">003</div>
+        <div class="gc-num">02</div>
         <div class="gc-title">Campaña Gráfica</div>
         <div class="gc-tags">
           <span class="gc-tag">Poster</span>
@@ -188,7 +181,7 @@
       </div>
  
       <div class="grafico-card r rl rd4">
-        <div class="gc-num">004</div>
+        <div class="gc-num">03</div>
         <div class="gc-title">Sistema de Iconografía</div>
         <div class="gc-tags">
           <span class="gc-tag">Iconos</span>
@@ -201,19 +194,12 @@
  
     <div class="grafico-right r rr">
       <div class="gr-preview">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
-          <rect x="20" y="20" width="160" height="160" stroke="rgba(245,245,240,.3)" stroke-width="1"/>
-          <rect x="40" y="40" width="120" height="120" stroke="rgba(245,245,240,.15)" stroke-width=".5" transform="rotate(15,100,100)"/>
-          <circle cx="100" cy="100" r="50" stroke="rgba(245,245,240,.2)" stroke-width="1"/>
-          <line x1="20" y1="100" x2="180" y2="100" stroke="rgba(245,245,240,.1)" stroke-width=".5"/>
-          <line x1="100" y1="20" x2="100" y2="180" stroke="rgba(245,245,240,.1)" stroke-width=".5"/>
-          <circle cx="100" cy="100" r="8" fill="rgba(245,245,240,.35)"/>
+        <svg viewBox="0 0 200 200" fill="none">
         </svg>
       </div>
-      <div class="gr-label">Preview Interactivo</div>
+      <div class="gr-label">Proyecto Afiche</div>
       <p class="gr-desc">
-        Cada proyecto gráfico parte de una premisa conceptual clara. La forma sirve al mensaje,
-        la paleta sirve a la emoción, el sistema sirve a la escalabilidad.
+        Afiche realizado para el proyecto de Branding de la Sala Verdi. Atravez de los conceptos generados en el manual de marca se genero varios afiches para el proyecto.
       </p>
     </div>
   </div>
@@ -267,20 +253,20 @@
       </h2>
     </div>
     <p class="uxui-intro r rr rd2">
-      Interfaces que equilibran la claridad funcional con la distinción estética.
-      Diseño centrado en el usuario, construido sobre sistemas coherentes y escalables.
+     Proyecto de estudio sobre la plataforma de transporte de STM, donde rediseñamos elementos que concideramos que necesitaban mejoras para los usuarios.
     </p>
   </div>
  
-  <div class="uxui-projects">
- 
+  <div class="uxui-projects row">
+  
+    <div class="col--md-12"></div>
     <div class="ux-project r rd1">
-      <span class="ux-num">01</span>
-      <span class="ux-title">Dashboard Analytics</span>
+    
+      <span class="ux-title">Proyecto STM</span>
       <div class="ux-tags">
         <span class="ux-tag">Figma</span>
-        <span class="ux-tag">Data Viz</span>
-        <span class="ux-tag">B2B SaaS</span>
+        <span class="ux-tag">STITCH</span>
+        <span class="ux-tag">USERBERRY</span>
       </div>
       <div class="ux-arrow">
         Ver proyecto
@@ -290,67 +276,14 @@
       </div>
     </div>
  
-    
+    <div class="container-fluid">
+        <div class="row">
+            <img src="figmamockups.jpg">
+        </div>
+
+    </div>
  
  
-  <div class="uxui-mockups">
-    <div class="mockup-frame r rl rd2">
-      <div class="mockup-bar">
-        <div class="mbar-dot"></div>
-        <div class="mbar-dot"></div>
-        <div class="mbar-dot"></div>
-      </div>
-      <div class="mockup-body">
-        <div class="mb-hero"></div>
-        <div class="mb-line med"></div>
-        <div class="mb-line short"></div>
-        <div class="mb-cards">
-          <div class="mb-card"></div>
-          <div class="mb-card"></div>
-          <div class="mb-card"></div>
-          <div class="mb-card"></div>
-        </div>
-      </div>
-      <div class="mockup-label">Dashboard Analytics</div>
-    </div>
-    <div class="mockup-frame r rd3">
-      <div class="mockup-bar">
-        <div class="mbar-dot"></div>
-        <div class="mbar-dot"></div>
-        <div class="mbar-dot"></div>
-      </div>
-      <div class="mockup-body">
-        <div class="mb-line med" style="height:20px;margin-bottom:.5rem"></div>
-        <div class="mb-hero" style="height:45%"></div>
-        <div class="mb-line short"></div>
-        <div class="mb-line med"></div>
-        <div class="mb-cards" style="grid-template-columns:1fr 1fr 1fr">
-          <div class="mb-card"></div>
-          <div class="mb-card"></div>
-          <div class="mb-card"></div>
-        </div>
-      </div>
-      <div class="mockup-label">App Bienestar</div>
-    </div>
-    <div class="mockup-frame r rr rd4">
-      <div class="mockup-bar">
-        <div class="mbar-dot"></div>
-        <div class="mbar-dot"></div>
-        <div class="mbar-dot"></div>
-      </div>
-      <div class="mockup-body">
-        <div class="mb-line short" style="height:14px"></div>
-        <div class="mb-cards" style="grid-template-columns:1fr;gap:.5rem">
-          <div class="mb-card" style="height:60px"></div>
-          <div class="mb-card" style="height:60px"></div>
-          <div class="mb-card" style="height:60px"></div>
-        </div>
-        <div class="mb-line med"></div>
-        <div class="mb-hero" style="height:20%"></div>
-      </div>
-      <div class="mockup-label">E-commerce</div>
-    </div>
-  </div>
  
 </section>
  
@@ -421,6 +354,11 @@
     </div>
   </div>
 </section>
+
+
+
+
+
  <section id="contacto">
   <div class="section-num" aria-hidden="true">07</div>
   <div class="eyebrow r">Sección 07</div>
@@ -428,16 +366,14 @@
     Calculadora <em>de</em><br/>Comisiones
   </h2>
  
-  <div class="contacto-grid r rd2">
- 
-    <!-- ── Columna Izquierda: Calculadora ── -->
-    <div class="calc-col">
- 
-     <div class="row">
-<!-- Columna Izquierda: Calculadora -->
-            <div class="col--md-12 ">
-                <div class="card shadow-sm p-4 mb-4">
-  <form>                 
+<section class="container-fluid px-3 px-md-5 py-4">
+
+<div class="row">
+<!-- Calculadora -->
+            <div class="col-6 p-md-5 mb-5">
+                <div class="card shadow-sm p-md-4 mb-4">
+                  <div class="row">
+  <form class="p-md-5">                 
  <!-- Estilo Visual precio color-->
                     <label class="form-label fw-bold">Estilo Visual</label>
                     <div class="row g-3 mb-4">
@@ -489,7 +425,7 @@
 </div>
                         
  <!-- Contador de Personajes -->
-                         <label class="form-label fw-bold">Cantidad de Personajes</label>
+                         <label class="form-label fw-bold al">Cantidad de Personajes</label>
                     <div class="d-flex align-items-center mb-4">
                         <button type="button" class="btn btn-outline-dark rounded-circle" id="btnRestar">-</button>
 <span class="mx-4 fs-3 fw-bold" id="cantidadPersonajes">01</span>
@@ -538,6 +474,23 @@
 
 
 <!--Resumen de la obra-->
+                        
+            </div>
+
+           
+            
+        </div>
+    </div>
+
+</div>
+
+<!--Resumen de comision-->
+<div class="col-6 p-md-5 mb-5">
+                <div class="card shadow-sm p-md-4 mb-4">
+                  <div class="row">
+  <form class="p-md-5">                 
+
+<!--Resumen de la obra-->
                          <div class="card shadow-sm p-4 sticky-top">
                     <h3 class="h5 border-bottom pb-2">Resumen de la Obra</h3>
                     <ul class="list-unstyled mt-3" id="listaResumen">
@@ -561,17 +514,22 @@
         <label>CANCELAR SELECCIONES</label>
     </button>
 </div>
-    </form> 
+</form> 
            
             
         </div>
     </div>
 
-
+</div>
+</div>
+</section>   
+            
 
 
 <footer>
+<div class="container-fluid">
   <span class="ft-brand">Romina Garcia ✦ Portfolio — 2026</span>
+</div>
 </footer>
  
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

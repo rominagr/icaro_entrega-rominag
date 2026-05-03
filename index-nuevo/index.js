@@ -176,11 +176,16 @@ function updateMainImage() {
   const caption = document.getElementById('gm-caption');
   const counter = document.getElementById('gal-counter');
 
-  mainInner.style.backgroundImage = `url(${item.img})`;
+  // Cambiamos el fondo por una etiqueta img para mejor control de proporciones
+  mainInner.innerHTML = `
+    <img src="${item.img}" 
+         alt="${item.title}" 
+         class="img-fluid w-100 h-100 object-fit-contain">
+  `;
+  
   caption.innerHTML = `<strong>${item.title}</strong> — ${item.category}`;
   counter.innerText = `${currentIndex + 1} / ${galleryData.length}`;
 
-  // Actualizar clase active en miniaturas
   document.querySelectorAll('.gthumb').forEach((t, i) => {
     t.classList.toggle('active', i === currentIndex);
   });
@@ -207,6 +212,45 @@ document.querySelectorAll('.gthumb, .gal-nav').forEach(el => {
   el.addEventListener('mouseenter', () => { cur.classList.add('hover'); ring.classList.add('link'); });
   el.addEventListener('mouseleave', () => { cur.classList.remove('hover'); ring.classList.remove('link'); });
 });
+
+function agregarIdea() {
+    const input = document.getElementById('nuevaIdeaInput');
+    const texto = input.value.trim();
+
+    if (texto === "") return; // No agregar si está vacío
+
+    const lista = document.getElementById('listaIdeas');
+
+    // Crear el elemento li con clases de Bootstrap
+    const li = document.createElement('li');
+    li.className = 'list-group-item d-flex justify-content-between align-items-center animate__animated animate__fadeIn';
+
+    // Contenedor para el texto (permite tachar al hacer clic)
+    const spanTexto = document.createElement('span');
+    spanTexto.textContent = texto;
+    spanTexto.style.cursor = "pointer";
+    spanTexto.onclick = function() {
+        this.classList.toggle('text-decoration-line-through');
+        this.classList.toggle('text-muted');
+    };
+
+    // Botón de eliminar
+    const btnEliminar = document.createElement('button');
+    btnEliminar.innerHTML = '&times;'; // Es una "X"
+    btnEliminar.className = 'btn btn-sm btn-danger rounded-pill';
+    btnEliminar.onclick = function() {
+        li.remove();
+    };
+
+    // Armar el item
+    li.appendChild(spanTexto);
+    li.appendChild(btnEliminar);
+    lista.appendChild(li);
+
+    // Limpiar input
+    input.value = "";
+    input.focus();
+}
 
 
 
@@ -361,45 +405,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-function agregarIdea() {
-    const input = document.getElementById('nuevaIdeaInput');
-    const texto = input.value.trim();
-
-    if (texto === "") return; // No agregar si está vacío
-
-    const lista = document.getElementById('listaIdeas');
-
-    // Crear el elemento li con clases de Bootstrap
-    const li = document.createElement('li');
-    li.className = 'list-group-item d-flex justify-content-between align-items-center animate__animated animate__fadeIn';
-
-    // Contenedor para el texto (permite tachar al hacer clic)
-    const spanTexto = document.createElement('span');
-    spanTexto.textContent = texto;
-    spanTexto.style.cursor = "pointer";
-    spanTexto.onclick = function() {
-        this.classList.toggle('text-decoration-line-through');
-        this.classList.toggle('text-muted');
-    };
-
-    // Botón de eliminar
-    const btnEliminar = document.createElement('button');
-    btnEliminar.innerHTML = '&times;'; // Es una "X"
-    btnEliminar.className = 'btn btn-sm btn-danger rounded-pill';
-    btnEliminar.onclick = function() {
-        li.remove();
-    };
-
-    // Armar el item
-    li.appendChild(spanTexto);
-    li.appendChild(btnEliminar);
-    lista.appendChild(li);
-
-    // Limpiar input
-    input.value = "";
-    input.focus();
-}
 
 
 const btnCancelar = document.getElementById('btnAplicar');

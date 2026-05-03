@@ -1,6 +1,6 @@
- /* ════════════════════════════════════
+ /*
        VARIABLES & RESET
-    ════════════════════════════════════ */
+    */
     :root {
       --black:   #0a0a0a;
       --white:   #f5f5f0;
@@ -29,7 +29,7 @@
       overflow-x: hidden;
     }
  
-    /* ── Grain overlay ──────────────────── */
+    /*Grain overlay*/
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 9999;
@@ -40,16 +40,14 @@
     }
  
  
-    /* ── Progress bar ───────────────────── */
+    /*Progress bar */
     #progress {
       position: fixed; top: 0; left: 0; z-index: 1000;
       height: 1px; background: var(--black);
       width: 0%; transition: width .08s linear;
     }
  
-    /* ════════════════════════════════════
-       NAVBAR
-    ════════════════════════════════════ */
+    /*NAVBAR*/
     
     nav {
       position: fixed; top: 1px; left: 0; right: 0; z-index: 900;
@@ -92,7 +90,7 @@
     .nav-menu a:hover { color: var(--black); }
     .nav-menu a:hover::after { width: 100%; }
  
-    /* ── Scroll dots ────────────────────── */
+    /*Scroll dots*/
     .nav-dots {
       position: fixed; right: 2rem; top: 50%;
       transform: translateY(-50%);
@@ -108,9 +106,7 @@
     }
     .ndot.active { background: var(--black); transform: scale(1.6); }
  
-    /* ════════════════════════════════════
-       REVEAL
-    ════════════════════════════════════ */
+    /*REVEAL*/
     .r { opacity: 0; transform: translateY(32px); transition: opacity .9s ease, transform .9s ease; }
     .r.in { opacity: 1; transform: none; }
     .rd1 { transition-delay: .1s; }
@@ -123,9 +119,7 @@
     .rr { opacity: 0; transform: translateX(40px); transition: opacity .9s ease, transform .9s ease; }
     .rr.in { opacity: 1; transform: none; }
  
-    /* ════════════════════════════════════
-       SECTION BASE
-    ════════════════════════════════════ */
+    /*SECTION BASE */
     section {
       position: relative;
       padding: 9rem 8rem;
@@ -156,26 +150,29 @@
       color: var(--black);
     }
     .big-title em { font-style: italic; font-weight: 300; }
+    
+    
     .big-title.outline {
       -webkit-text-stroke: 1.5px var(--black);
       color: transparent;
     }
  
-    .section-num {
-      position: absolute;
-      top: 4rem; right: 5rem;
-      font-size: clamp(5rem, 12vw, 10rem);
-      font-weight: 900;
-      color: var(--gray-7);
-      line-height: 1;
-      letter-spacing: -.05em;
-      user-select: none;
-      pointer-events: none;
-    }
- 
-    /* ════════════════════════════════════
-       §0 — HERO
-    ════════════════════════════════════ */
+   .section-num {
+  position: absolute;  /* Lo sacamos del flujo para moverlo libremente */
+  top: 0;
+  left: 0;
+  font-size: 15rem;    /* Tamaño grande para el fondo */
+  color: rgba(0, 0, 0, 0.05); /* Muy clarito para que no distraiga */
+  z-index: 1;          /* Capa inferior */
+  pointer-events: none; /* Para que no interfiera si alguien intenta hacer clic en el texto */
+}
+
+.eyebrow, .big-title {
+  position: relative;  /* Necesario para que el z-index funcione */
+  z-index: 2;          /* Capa superior (más alto que el .section-num) */
+}
+
+    /*HERo */
     #hero {
       min-height: 100vh;
       display: flex; align-items: flex-end;
@@ -250,9 +247,12 @@
       background: rgba(245,245,240,.1);
       margin: 3rem 0 2rem;
     }
-    .hero-tags {
-      display: flex; gap: 1rem;
-    }
+   .hero-tags {
+  display: flex;       /* Convierte el contenedor en flexible */
+  flex-wrap: wrap;    /* CLAVE: Permite que los tags bajen a la siguiente línea si no caben */
+  gap: 10px;          /* Da espacio entre los tags sin usar margenes complicados */
+  justify-content: flex-start; /* Alinea los tags al inicio (puedes usar center si prefieres) */
+}
     .htag {
       font-size: .6rem;
       font-weight: 600;
@@ -266,9 +266,8 @@
     }
     .htag:hover { color: var(--white); border-color: rgba(245,245,240,.5); }
  
-    /* ════════════════════════════════════
-       §1 — ABOUT / STATEMENT
-    ════════════════════════════════════ */
+    /*ABOUT / STATEMENT
+    */
     #about {
       background: var(--white);
       min-height: 80vh;
@@ -328,9 +327,9 @@
     }
     .skill-tag:hover { background: var(--black); color: var(--white); border-color: var(--black); }
  
-    /* ════════════════════════════════════
+    /*
        §2 — ILUSTRACIÓN
-    ════════════════════════════════════ */
+    */
     #ilustracion {
       background: var(--black);
       min-height: 100vh;
@@ -410,9 +409,9 @@
       opacity: .35;
     }
  
-    /* ════════════════════════════════════
+    /*
        §3 — DISEÑO GRÁFICO
-    ════════════════════════════════════ */
+    */
     #grafico {
       background: var(--white);
       min-height: 100vh;
@@ -493,9 +492,9 @@
       color: var(--gray-3); line-height: 1.8;
     }
  
-    /* ════════════════════════════════════
+    /*
        §4 — TIPOGRAFÍA
-    ════════════════════════════════════ */
+    */
     #tipografia {
       background: var(--black);
       min-height: 100vh;
@@ -571,9 +570,9 @@
       to   { transform: translateX(-50%); }
     }
  
-    /* ════════════════════════════════════
+    /*
        §5 — DISEÑO UX/UI
-    ════════════════════════════════════ */
+    */
     #uxui {
       background: var(--white);
       min-height: 100vh;
@@ -703,9 +702,9 @@
     }
     .mockup-frame:hover .mockup-label { opacity: 1; }
  
-    /* ════════════════════════════════════
+    /*
        §6 — CONTACTO / CTA
-    ════════════════════════════════════ */
+    */
     #contacto {
       background: var(--black);
       min-height: 80vh;
@@ -784,7 +783,7 @@
     }
     .csocial:hover { color: var(--white); }
  
-    /* ── Footer ─────────────────────────── */
+    /*Footer */
     footer {
       background: #050505;
       padding: 2rem 8rem;
@@ -801,7 +800,7 @@
       color: rgba(245,245,240,.1);
     }
  
-    /* ── Responsive ─────────────────────── */
+    /*Responsive */
     @media (max-width: 1024px) {
       section, #hero, #contacto { padding: 6rem 3rem; }
       nav { padding: 1.2rem 2rem; }
@@ -821,9 +820,9 @@
       .nav-dots { display: none; }
     }
  
-    /* ════════════════════════════════════
+    /*
        §5b — TASK BOARD
-    ════════════════════════════════════ */
+    */
     #tareas {
       background: var(--black);
       min-height: 100vh;
@@ -989,9 +988,9 @@
       color: rgba(245,245,240,.15);
     }
  
-    /* ════════════════════════════════════
+    /*
        §5c — GALERÍA
-    ════════════════════════════════════ */
+    */
    .gallery-layout {
   display: flex;
   flex-direction: column;
@@ -1037,9 +1036,9 @@
 
 
 
-/* ════════════════════════════════════
+/*
        §6 — CONTACTO & COMISIONES
-    ════════════════════════════════════ */
+    */
     #contacto {
       background: var(--black);
       min-height: 100vh;
