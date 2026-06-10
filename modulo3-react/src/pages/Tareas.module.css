@@ -8,6 +8,15 @@
   padding: 0 1rem;       /* espacio lateral en móviles */
 }
 
+.titleWrapper,
+.ilustracion h1,
+.ilustracion h2,
+.tareasLayout h1, 
+.tareasLayout h2 { 
+  font-size: 3rem !important; 
+  margin-bottom: 1rem;
+}
+  
 .eyebrow {
   color: rgba(245, 245, 240, .3);
 }
@@ -28,6 +37,16 @@
 
 
 @media (max-width: 768px) {
+
+  .titleWrapper,
+  .ilustracion h1,
+  .ilustracion h2,
+  .tareasLayout h1, /* 👈 También lo cubrimos en la versión móvil */
+  .tareasLayout h2 {
+    font-size: 2.3rem !important; /* Este ya tenía 'rem', ahora está perfecto */
+    margin-bottom: 1rem;
+  }
+
   .tareasLayout {
     max-width: 100%;     
     margin-top: 2rem;    

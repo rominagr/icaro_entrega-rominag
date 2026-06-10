@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import styles from './TaskBoard.module.css';
+import CustomTitle from '../components/CustomTitle';
 
 const INITIAL_TASKS = [
   { id: 1, text: 'Diseñar nueva identidad visual', done: false },
@@ -65,6 +66,14 @@ export default function TaskBoard() {
   }
 
   return (
+    <section id='tareas' className={styles.Tareas}>
+
+     <div className={styles.titleWrapper}>
+    <CustomTitle>
+      Ta<em>re</em>as
+    </CustomTitle>
+  </div>
+
     <div className={styles.tasksLayout}>
 
       {/* Input */}
@@ -142,5 +151,6 @@ export default function TaskBoard() {
         </button>
       </div>
     </div>
+    </section>
   );
 }
