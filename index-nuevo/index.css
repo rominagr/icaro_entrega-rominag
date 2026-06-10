@@ -1325,7 +1325,6 @@
    gap: 0;
    border-bottom: 1px solid rgba(245, 245, 240, .08);
    margin-bottom: 0;
-   padding: 10%;
  }
 
  .tf-btn {
@@ -2112,7 +2111,7 @@
 
  .btn-check:checked+.btn-estilo-visual .img-bg {
    transform: scale(1.1);
-   /* Zoom sutil al estar seleccionado */
+
  }
 
  /* Efecto Hover opcional */

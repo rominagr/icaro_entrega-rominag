@@ -1,0 +1,221 @@
+.tasksLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Input ── */
+.taskInputWrap {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(245, 245, 240, .12);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color .2s;
+}
+
+.taskInputWrap:focus-within {
+  border-color: rgba(245, 245, 240, .35);
+}
+
+.taskInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: .75rem 1rem;
+  font-size: .85rem;
+  font-weight: 300;
+  color: var(--white);
+  font-family: inherit;
+}
+
+.taskInput::placeholder {
+  color: rgba(245, 245, 240, .25);
+}
+
+.taskAddBtn {
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(245, 245, 240, .12);
+  padding: 0 1rem;
+  color: rgba(245, 245, 240, .4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color .2s, background .2s;
+}
+
+.taskAddBtn:hover {
+  color: var(--white);
+  background: rgba(245, 245, 240, .06);
+}
+
+/* ── Filtros ── */
+.taskFilters {
+  display: flex;
+  gap: 6px;
+}
+
+.tfBtn {
+  background: transparent;
+  border: 1px solid rgba(245, 245, 240, .1);
+  border-radius: 999px;
+  padding: .3rem .9rem;
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, .3);
+  cursor: pointer;
+  transition: all .2s;
+  font-family: inherit;
+}
+
+.tfBtn:hover {
+  color: var(--white);
+  border-color: rgba(245, 245, 240, .4);
+}
+
+.tfBtn.active {
+  color: var(--white);
+  border-color: rgba(245, 245, 240, .5);
+  background: rgba(245, 245, 240, .06);
+}
+
+/* ── Lista ── */
+.taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.taskEmpty {
+  font-size: .8rem;
+  font-weight: 300;
+  color: rgba(245, 245, 240, .2);
+  padding: 1.5rem 0;
+  text-align: center;
+  letter-spacing: .05em;
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .7rem .5rem;
+  border-bottom: 1px solid rgba(245, 245, 240, .05);
+  transition: opacity .25s, transform .25s;
+}
+
+.taskItem.removing {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+/* ── Checkbox ── */
+.taskCheck {
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(245, 245, 240, .2);
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: border-color .2s, background .2s;
+}
+
+.taskCheck:hover {
+  border-color: rgba(245, 245, 240, .5);
+}
+
+.taskCheckInner {
+  width: 8px;
+  height: 8px;
+  border-radius: 1px;
+  background: transparent;
+  transition: background .15s;
+}
+
+.taskItem.done .taskCheck {
+  border-color: rgba(245, 245, 240, .4);
+}
+
+.taskItem.done .taskCheckInner {
+  background: rgba(245, 245, 240, .5);
+}
+
+/* ── Texto ── */
+.taskText {
+  flex: 1;
+  font-size: .85rem;
+  font-weight: 300;
+  color: rgba(245, 245, 240, .8);
+  line-height: 1.4;
+  transition: color .2s, text-decoration .2s;
+}
+
+.taskItem.done .taskText {
+  color: rgba(245, 245, 240, .25);
+  text-decoration: line-through;
+}
+
+/* ── Eliminar ── */
+.taskDel {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  color: rgba(245, 245, 240, .15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  transition: color .2s, background .2s;
+  flex-shrink: 0;
+}
+
+.taskDel:hover {
+  color: rgba(245, 245, 240, .7);
+  background: rgba(245, 245, 240, .06);
+}
+
+/* ── Footer ── */
+.taskFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: .5rem;
+}
+
+.taskCounter {
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, .25);
+}
+
+.tfClear {
+  background: transparent;
+  border: none;
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, .2);
+  cursor: pointer;
+  font-family: inherit;
+  transition: color .2s;
+  padding: 0;
+}
+
+.tfClear:hover {
+  color: rgba(245, 245, 240, .6);
+}

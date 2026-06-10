@@ -1,0 +1,251 @@
+
+.container {
+  background: var(--black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra horizontalmente el contenido */
+  padding: 0 1rem;       /* espacio lateral en móviles */
+}
+
+.eyebrow {
+  color: rgba(245, 245, 240, .3);
+}
+.eyebrow::before {
+  background: rgba(245, 245, 240, .3);
+}
+
+
+.tareasLayout {
+  max-width: 680px;    
+  width: 100%;           
+  margin: 3.5rem auto 0 auto;   
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 20;
+}
+
+
+@media (max-width: 768px) {
+  .tareasLayout {
+    max-width: 100%;     
+    margin-top: 2rem;    
+  }
+  
+  .container {
+    padding: 0 0.75rem; 
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tareasLayout {
+    max-width: 560px;   
+  }
+}
+
+.taskInputWrap {
+  display: flex;
+  border: 1px solid rgba(245, 245, 240, .12);
+  border-radius: 0;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  transition: border-color .25s;
+}
+.taskInputWrap:focus-within {
+  border-color: rgba(245, 245, 240, .5);
+}
+
+.taskInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 1rem 1.25rem;
+  font-family: var(--font);
+  font-size: .85rem;
+  font-weight: 300;
+  color: var(--white);
+  letter-spacing: .02em;
+}
+.taskInput::placeholder {
+  color: rgba(245, 245, 240, .2);
+}
+
+.taskAddBtn {
+  background: rgba(245, 245, 240, .07);
+  border: none;
+  padding: 0 1.25rem;
+  color: rgba(245, 245, 240, .5);
+  cursor: pointer;
+  transition: background .2s, color .2s;
+  display: flex;
+  align-items: center;
+}
+.taskAddBtn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.taskFilters {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(245, 245, 240, .08);
+  margin-bottom: 0;
+}
+
+.tfBtn {
+  background: transparent;
+  border: none;
+  padding: .6rem 1.5rem;
+  font-family: var(--font);
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, .25);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color .2s, border-color .2s;
+}
+.tfBtn:hover {
+  color: rgba(245, 245, 240, .6);
+}
+.active {
+  color: var(--white);
+  border-bottom-color: var(--white);
+}
+
+.taskList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(245, 245, 240, .06);
+  animation: taskIn .35s ease forwards;
+}
+@keyframes taskIn {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.done .taskText {
+  text-decoration: line-through;
+  color: rgba(245, 245, 240, .2);
+}
+.hidden {
+  display: none;
+}
+
+.taskCheck {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border: 1px solid rgba(245, 245, 240, .2);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s, border-color .2s;
+  position: relative;
+}
+.taskCheck:hover {
+  border-color: rgba(245, 245, 240, .6);
+}
+.done .taskCheck {
+  background: rgba(245, 245, 240, .12);
+  border-color: rgba(245, 245, 240, .25);
+}
+.taskCheckInner {
+  width: 10px;
+  height: 10px;
+  background: var(--white);
+  transform: scale(0);
+  transition: transform .2s cubic-bezier(.34, 1.56, .64, 1);
+}
+.done .taskCheckInner {
+  transform: scale(1);
+}
+
+.taskText {
+  flex: 1;
+  font-size: .85rem;
+  font-weight: 300;
+  color: rgba(245, 245, 240, .85);
+  letter-spacing: .01em;
+  line-height: 1.4;
+  transition: color .25s, text-decoration .25s;
+}
+
+.taskDel {
+  background: transparent;
+  border: none;
+  color: rgba(245, 245, 240, .15);
+  cursor: pointer;
+  font-size: .9rem;
+  padding: .2rem .4rem;
+  transition: color .2s;
+  display: flex;
+  align-items: center;
+}
+.taskDel:hover {
+  color: #e05050;
+}
+
+.taskFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  margin-top: .5rem;
+  border-top: 1px solid rgba(245, 245, 240, .08);
+}
+
+.taskCounter {
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, .25);
+}
+
+.tfClear {
+  background: transparent;
+  border: none;
+  font-family: var(--font);
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, .2);
+  cursor: pointer;
+  transition: color .2s;
+  padding: 0;
+}
+.tfClear:hover {
+  color: #e05050;
+}
+
+.taskEmpty {
+  padding: 3rem 0;
+  text-align: center;
+  font-size: .8rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(245, 245, 240, .15);
+}

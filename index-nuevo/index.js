@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function calcular() {
 
-        console.group("--- Cálculo de Presupuesto ---");
+        console.group("Calculo de Presupuesto");
         // Capturar selecciones de radios (verificar que existan)
         const estiloElegido = document.querySelector('input[name="estilo"]:checked');
         const tecnicaElegida = document.querySelector('input[name="tecnica"]:checked');
@@ -307,6 +307,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 1. Cálculo del Subtotal (Suma de todos los conceptos)
         let subtotal = CONFIG.baseComision;
+        console.log(`Base Comisión: $${subtotal}`);
+
 
         let html = `
             <li class="d-flex justify-content-between mb-2 border-bottom pb-1">
@@ -407,20 +409,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-const btnCancelar = document.getElementById('btnAplicar');
-
-// Cambiar estilo mediante JS
-btnCancelar.style.backgroundColor = "#4a0000";
-btnCancelar.style.borderColor = "#4a0000";
-btnCancelar.style.color = "#ffffff";
-
-// Ejemplo: Limpiar el formulario al hacer clic
-btnCancelar.addEventListener('click', () => {
-    const form = btnCancelar.closest('form');
-    if (form) {
-        form.reset();
-        // Si usas la función actualizarEstilos de antes, llámala aquí:
-        // actualizarEstilos(); 
-    }
-});

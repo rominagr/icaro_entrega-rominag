@@ -1,0 +1,97 @@
+
+.biogr {
+   background-color: var(--white);
+   padding: 6rem 8rem;
+   color: var(--black);
+   overflow: hidden;
+   width: 100%;
+}
+
+
+.biogrInner {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   gap: 4rem;
+}
+
+
+.biogrStatement {
+   font-size: 2rem;
+   line-height: 1.4;
+   letter-spacing: -0.02em;
+   color: rgba(0, 0, 0, 0.9);
+   max-width: 45%; 
+}
+
+.biogrStatement strong {
+   font-weight: 600;
+   color: var(--black);
+}
+
+
+.biogrRight {
+   max-width: 45%; 
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+}
+
+
+.biogrBio {
+   font-size: 0.95rem;
+   font-weight: 300;
+   line-height: 1.8;
+   color: var(--black);
+   margin: 0;
+}
+
+
+.skillsList {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+}
+
+.skillTag {
+   font-size: .6rem;
+   font-weight: 600;
+   letter-spacing: .15em;
+   text-transform: uppercase;
+   color: var(--black);
+   border: 2px solid rgba(0, 0, 0, 0.1); 
+   padding: .4rem 1rem;
+   border-radius: 999px;
+   transition: all .3s ease;
+}
+
+.skillTag:hover {
+   color: var(--white);
+   border-color: rgba(255, 255, 118, 0.795);
+   background-color: var(--black);
+}
+
+
+@media (max-width: 768px) {
+   .biogr {
+      padding: 4rem 1.5rem; 
+   }
+
+   .biogrInner {
+      display: block; 
+   }
+
+   .biogrStatement {
+      max-width: 100%; 
+      font-size: 1.6rem; 
+      margin-bottom: 2rem;
+   }
+
+   .biogrRight {
+      max-width: 100%; 
+   }
+   
+   .biogrBio {
+      font-size: 0.9rem; 
+   }
+}
