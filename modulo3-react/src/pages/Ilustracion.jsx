@@ -4,8 +4,9 @@ import foto2 from '../assets/foto2.png';
 import foto3 from '../assets/foto3.jpg';
 import foto4 from '../assets/foto4.jpg';
 import foto5 from '../assets/pinpumpan.jpg';
-import CustomTitle from '../components/CustomTitle'; 
+import CustomTitle from "../components/CustomTitle";
 import styles from './Ilustracion.module.css';
+import SectionNum from '../components/SectionNum';
 
 
 
@@ -49,7 +50,9 @@ const Ilustracion = () => {
 
   return (
   <section id="ilustracion" className={styles.ilustracion}>
- 
+ <SectionNum num="01" />
+      
+      <div className="eyebrow r">Sección 01</div>
   <div className={styles.titleWrapper}>
     <CustomTitle>
       Ilus<em>tra</em><br />ción

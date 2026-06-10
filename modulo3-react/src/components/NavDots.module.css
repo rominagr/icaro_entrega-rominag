@@ -1,0 +1,54 @@
+.dotsContainer {
+  position: fixed;   /* 👈 Obliga a los puntos a quedarse quietos en la pantalla */
+  right: 2.5rem;     /* Distancia desde el borde derecho */
+  top: 50%;          /* Lo centra verticalmente */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;       /* Espaciado entre puntitos */
+  z-index: 9999;     /* 👈 Un número muy alto para que NADA los tape */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(245, 245, 240, 0.4);
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* El punto activo se rellena con tu color cobrizo/blanco */
+.dotActive, .dot:hover {
+  background: #ffffff; 
+  border-color: #ffffff;
+  transform: scale(1.2);
+}
+/* Tooltip opcional que aparece al pasar el mouse por el puntito */
+.tooltip {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--white);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.dot:hover .tooltip {
+  opacity: 1;
+}
+
+/* En celulares es mejor ocultarlos para que no molesten en la pantalla */
+@media (max-width: 768px) {
+  .dotsContainer {
+    display: none;
+  }
+}

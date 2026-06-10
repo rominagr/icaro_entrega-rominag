@@ -1,0 +1,19 @@
+.sectionNum {
+  position: absolute;
+  top: -2rem;                
+  left: 0;
+  font-size: clamp(8rem, 20vw, 16rem);
+  font-weight: 900;
+  line-height: 0.8;
+  
+  
+  color: rgba(0, 0, 0, 0.04); 
+  
+ 
+  font-family: inherit;       
+  
+  z-index: 0;                
+  pointer-events: none;       
+  user-select: none;          
+}
+

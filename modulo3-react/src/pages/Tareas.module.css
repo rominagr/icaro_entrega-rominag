@@ -1,22 +1,49 @@
 
 .container {
-  background: var(--black);
+  background-color: #000000 !important; 
+  color: #f5f5f0 !important;            
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;   /* centra horizontalmente el contenido */
-  padding: 0 1rem;       /* espacio lateral en móviles */
+  align-items: center;
+  padding: 6rem 2rem;
+  width: 100%;
 }
 
-.titleWrapper,
-.ilustracion h1,
-.ilustracion h2,
-.tareasLayout h1, 
-.tareasLayout h2 { 
-  font-size: 3rem !important; 
-  margin-bottom: 1rem;
+.titleWrapper .big-title,
+.titleWrapper [class*="big-title"] {
+  font-size: clamp(3rem, 7vw, 7rem) !important;
 }
-  
+
+.flexWorkspace {
+  display: flex;
+  flex-direction: row;     
+  justify-content: space-between;
+  align-items: flex-start;  
+  gap: 3.5rem;              
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Columna de tareas flexible */
+.tareasLayout {
+  flex: 1;                  
+  width: 100%;           
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 20px;
+}
+
+/* Columna de garabatos flexible */
+.garabatoSectionWrap {
+  flex: 1.2;                
+  width: 100%;
+  max-width: 600px;         
+  margin: 0;
+}
+
 .eyebrow {
   color: rgba(245, 245, 240, .3);
 }
@@ -25,39 +52,35 @@
 }
 
 
+
 .tareasLayout {
-  max-width: 680px;    
+  flex: 1;                  
   width: 100%;           
-  margin: 3.5rem auto 0 auto;   
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding: 20;
+  padding: 20px;            
 }
-
 
 @media (max-width: 768px) {
 
   .titleWrapper,
   .ilustracion h1,
   .ilustracion h2,
-  .tareasLayout h1, /* 👈 También lo cubrimos en la versión móvil */
+  .tareasLayout h1, 
   .tareasLayout h2 {
-    font-size: 2.3rem !important; /* Este ya tenía 'rem', ahora está perfecto */
+    font-size: 2.3rem !important; 
     margin-bottom: 1rem;
   }
 
-  .tareasLayout {
-    max-width: 100%;     
-    margin-top: 2rem;    
+ .flexWorkspace {
+    flex-direction: column; 
   }
   
   .container {
-    padding: 0 0.75rem; 
+    padding: 4rem 1rem;
   }
 }
-
-
 @media (min-width: 769px) and (max-width: 1024px) {
   .tareasLayout {
     max-width: 560px;   

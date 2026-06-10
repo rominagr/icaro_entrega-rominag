@@ -141,14 +141,12 @@
   }
 
 
- .titleWrapper,
-.ilustracion h1,
-.ilustracion h2,
-.tareasLayout h1,
-.tareasLayout h2 { 
-  font-size: 3rem !important;
-  margin-bottom: 1rem;
-}
+  .titleWrapper,
+  .ilustracion h1,
+  .ilustracion h2 {
+    font-size: 2.3rem !important; 
+    margin-bottom: 1rem;
+  }
 
   .galleryLayout {
     margin-top: 1.5rem; 
