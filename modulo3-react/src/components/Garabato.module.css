@@ -8,7 +8,7 @@
 .postit {
   width: 100%;
   max-width: 860px;
-  background: #f8f8f888;
+  background: #f8f8f8;
   border: 1px solid rgba(0, 0, 0, 0.829);
   border-radius: 2px;
   position: relative;
@@ -33,7 +33,7 @@
   height: 10px;
   border-radius: 50%;
   background: rgb(0, 0, 0);
-  border: 1px solid rgba(255, 255, 255, 0.767);
+  border: 1px solid rgba(58, 58, 58, 0.788);
   position: absolute;
   top: 1rem;
   left: 50%;
@@ -158,7 +158,7 @@
 
 .brushDot {
   border-radius: 50%;
-  background: rgba(245, 245, 240, .6);
+  background: rgba(0, 0, 0, 0.904);
   display: block;
   min-width: 6px;
   min-height: 6px;

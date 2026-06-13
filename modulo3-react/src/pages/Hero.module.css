@@ -168,3 +168,28 @@
       flex-shrink: 0; 
    }
 }
+
+/* Contenedor del logo para controlar su tamaño máximo */
+.logoWrapper {
+  width: 100%;
+  max-width: 380px; /* 🌟 Controla qué tan grande quieres que se vea en el monitor */
+  aspect-ratio: 1 / 1; /* Mantiene proporciones idénticas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* La imagen en sí */
+.heroLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 🌟 Evita que el logo se estire o se recorte; se encuadra perfecto */
+}
+
+/* Ajuste sutil por si en celulares el bloque de descripción queda muy pegado */
+@media (max-width: 768px) {
+  .logoWrapper {
+    max-width: 260px; /* Más compacto en pantallas de teléfonos */
+    margin: 1.5rem auto;
+  }
+}

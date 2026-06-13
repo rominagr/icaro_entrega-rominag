@@ -10,9 +10,9 @@ export default function Garabato() {
   const [color, setColor] = useState('rgba(245,245,240,0.85)');
 
   const COLORS = [
-    { label: 'Blanco', value: 'rgba(245,245,240,0.85)' },
+    { label: 'Blanco', value: 'rgb(0, 0, 0)' },
     { label: 'Rojo',   value: 'rgba(220,80,60,0.9)' },
-    { label: 'Cyan',   value: 'rgba(80,200,200,0.9)' },
+    { label: 'Cyan',   value: 'rgba(24, 126, 194, 0.9)' },
     { label: 'Oro',    value: 'rgba(220,180,80,0.9)' },
   ];
 

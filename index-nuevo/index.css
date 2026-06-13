@@ -2094,16 +2094,16 @@
 
 
 
- /*calculadora*/
+ 
 
- /* --- LÓGICA DE SELECCIÓN --- */
+ 
 
- /* Cuando NO está seleccionado: mantiene el overlay oscuro */
+
  .btn-check+.btn-estilo-visual .overlay {
    background-color: rgba(0, 0, 0, 0.7);
  }
 
- /* Cuando ESTÁ seleccionado: el overlay se aclara y la imagen puede escalarse */
+ 
  .btn-check:checked+.btn-estilo-visual .overlay {
    background-color: rgba(0, 0, 0, 0.2);
    /* Mucho más claro */

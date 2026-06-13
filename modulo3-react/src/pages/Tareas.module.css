@@ -283,6 +283,7 @@
   color: #e05050;
 }
 
+/* Limpiamos la clase taskEmpty para que quede perfecta */
 .taskEmpty {
   padding: 3rem 0;
   text-align: center;
@@ -290,4 +291,43 @@
   font-weight: 300;
   font-style: italic;
   color: rgba(245, 245, 240, .15);
+}
+
+/* 📱 RESPONSIVE DESIGN */
+
+/* Tablets y Celulares */
+@media (max-width: 768px) {
+  
+  /* 🌟 CORRECCIÓN DEL TITULAR: Forzamos el tamaño modular en responsive */
+  .titleWrapper h1,
+  .titleWrapper h2 {
+    font-size: 2.8rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1rem;
+  }
+
+  .titleWrapper em {
+    font-size: 2.8rem !important;
+  }
+
+  .flexWorkspace {
+    flex-direction: column; 
+    gap: 2.5rem;
+  }
+  
+  .container {
+    padding: 4rem 1rem;
+  }
+
+  /* El bloque del canvas de dibujo se adapta al ancho total del celu */
+  .garabatoSectionWrap {
+    max-width: 100%;
+  }
+}
+
+/* Ajustes para pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tareasLayout {
+    max-width: 560px;   
+  }
 }

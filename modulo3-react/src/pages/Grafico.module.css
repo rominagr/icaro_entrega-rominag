@@ -9,6 +9,7 @@
   align-items: center; 
 }
 
+/* El número grande que creamos como componente */
 .sectionNum {
   position: absolute;
   top: 2rem;
@@ -18,6 +19,12 @@
   opacity: 0.03;
   color: var(--black);
   user-select: none;
+}
+
+.titleWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
 }
 
 .titleWrapper em {
@@ -31,6 +38,7 @@
   color: var(--black) !important;
 }
 
+/* Layout en Grid */
 .graficoLayout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -44,9 +52,10 @@
 .graficoLeft {
   display: flex;
   flex-direction: column;
-  gap: 1.5px;
+  gap: 12px; /* 🌟 Un poquito más de separación entre tarjetas queda genial */
 }
 
+/* Tarjetas */
 .graficoCard {
   background: var(--gray-7);
   padding: 3rem;
@@ -55,7 +64,6 @@
   transition: background .3s;
   cursor: pointer;
 }
-
 
 .graficoCard:hover,
 .cardActiva {
@@ -140,7 +148,7 @@
   top: 8rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .grPreview {
@@ -148,8 +156,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1); 
   overflow: hidden; 
   aspect-ratio: 4 / 5; 
-  
-  
+  display: flex;         /* 🌟 Asegura centrado completo */
   justify-content: center;
   align-items: center;
 }
@@ -159,6 +166,7 @@
   height: 100%;
   object-fit: cover; 
   object-position: center;
+} /* 🌟 ¡Cerrada la llave correctamente aquí! */
 
 .grLabel {
   font-size: .6rem;
@@ -176,16 +184,46 @@
   line-height: 1.8;
 }
 
+/* 📱 RESPONSIVE DESIGN (Media Queries) */
 
+/* Tablets y pantallas medianas (laptops chicas) */
 @media (max-width: 992px) {
   .graficoLayout {
-    grid-template-columns: 1fr; 
-    gap: 3rem;
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    gap: 4rem;
   }
   
   .graficoRight {
-    position: relative; 
+    position: relative; /* Pierde el comportamiento fixed/sticky */
     top: 0;
   }
+}
 
-}}
+@media (max-width: 576px) {
+  .graficoSection {
+    padding: 4rem 1rem; /* Menos espacio alrededor en pantallas chicas */
+  }
+
+  /* 🌟 CONTROL DEL TITULAR EN RESPONSIVE */
+  .titleWrapper h1,
+  .titleWrapper h2 {
+    font-size: 2.8rem !important; /* Achica el tamaño general del título */
+    line-height: 1.1 !important;
+  }
+
+  .titleWrapper em {
+    font-size: 2.8rem !important; /* Asegura que la palabra en itálica/cobrizo acompañe el tamaño */
+  }
+
+  .graficoCard {
+    padding: 2rem 1.5rem; /* Ajusta el relleno interno de las tarjetas */
+  }
+
+  .gcTitle {
+    font-size: 1.3rem; /* Títulos un toque más chicos en las tarjetas */
+  }
+
+  .graficoLayout {
+    gap: 3rem;
+  }
+}

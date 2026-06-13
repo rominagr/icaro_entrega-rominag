@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { motion } from "framer-motion";
 import Navbar from './components/Navbar';
 import NavDots from './components/NavDots';
+import SectionReveal from './components/SectionReveal';
 
-
+import ScrollProgress from './components/ScrollProgress';
 import Hero from './pages/Hero';
 import Biogr from './pages/Biogr';
 import Ilustracion from './pages/Ilustracion';
@@ -17,16 +19,16 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <NavDots /> 
-
+      <ScrollProgress />
+      <NavDots />
       <Routes>
         <Route path="/" element={
           <div className="one-page-layout">
             <div id="hero"><Hero /></div>
-            <div id="biogr"><Biogr /></div>
-            <div id="ilustracion"><Ilustracion /></div>
-            <div id='Grafico'><Grafico /></div>
-            <div id="tareas"><Tareas /></div> 
+            <SectionReveal id="biogr"><Biogr /></SectionReveal>
+<SectionReveal id="ilustracion"><Ilustracion /></SectionReveal>
+<SectionReveal id="Grafico"><Grafico /></SectionReveal>
+<SectionReveal id="tareas"><Tareas /></SectionReveal>
             <div id="footermain"><Footermain /></div>
           </div>
         } />
@@ -34,5 +36,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
