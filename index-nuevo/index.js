@@ -216,15 +216,15 @@ function agregarIdea() {
     const input = document.getElementById('nuevaIdeaInput');
     const texto = input.value.trim();
 
-    if (texto === "") return; // No agregar si está vacío
+    if (texto === "") return; 
 
     const lista = document.getElementById('listaIdeas');
 
-    // Crear el elemento li con clases de Bootstrap
+    
     const li = document.createElement('li');
     li.className = 'list-group-item d-flex justify-content-between align-items-center animate__animated animate__fadeIn';
 
-    // Contenedor para el texto (permite tachar al hacer clic)
+    
     const spanTexto = document.createElement('span');
     spanTexto.textContent = texto;
     spanTexto.style.cursor = "pointer";

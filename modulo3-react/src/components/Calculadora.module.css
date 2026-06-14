@@ -1,0 +1,232 @@
+/* Calculadora.module.css — tema claro */
+
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .wrap { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 10, 0.4);
+  margin-bottom: 0.75rem;
+  border: none;
+  padding: 0;
+}
+
+.group {
+  margin-bottom: 2rem;
+  border: none;
+  padding: 0;
+  min-width: 0;
+}
+
+/* ── Radio cards ── */
+.radioGrid  { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.radioGrid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+
+.radioCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.85rem 0.5rem;
+  border: 1px solid rgba(10, 10, 10, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: rgba(10, 10, 10, 0.6);
+  text-align: center;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  user-select: none;
+}
+
+.radioCard input { display: none; }
+
+.radioCard small {
+  font-size: 0.65rem;
+  color: rgba(10, 10, 10, 0.35);
+  letter-spacing: 0.03em;
+}
+
+.radioCard:hover {
+  border-color: rgba(10, 10, 10, 0.5);
+  color: rgba(10, 10, 10, 0.9);
+}
+
+.radioCard.active {
+  border-color: rgba(10, 10, 10, 0.9);
+  color: rgba(10, 10, 10, 0.95);
+  background: rgba(10, 10, 10, 0.06);
+  font-weight: 600;
+}
+
+/* ── Counter ── */
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.counterBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(10, 10, 10, 0.2);
+  background: transparent;
+  color: rgba(10, 10, 10, 0.6);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.counterBtn:hover {
+  border-color: rgba(10, 10, 10, 0.7);
+  color: rgba(10, 10, 10, 1);
+}
+
+.counterNum {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: rgba(10, 10, 10, 0.9);
+  min-width: 3rem;
+  text-align: center;
+}
+
+/* ── Textarea ── */
+.textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.15);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: rgba(10, 10, 10, 0.8);
+  font-size: 0.85rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.textarea:focus { border-color: rgba(10, 10, 10, 0.5); }
+.textarea::placeholder { color: rgba(10, 10, 10, 0.25); }
+
+/* ── Upload ── */
+.uploadZone {
+  border: 1px dashed rgba(10, 10, 10, 0.2);
+  border-radius: 6px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  color: rgba(10, 10, 10, 0.35);
+  font-size: 0.75rem;
+  text-align: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.uploadZone:hover {
+  border-color: rgba(10, 10, 10, 0.4);
+  background: rgba(10, 10, 10, 0.02);
+}
+
+.hint {
+  font-size: 0.65rem;
+  color: rgba(10, 10, 10, 0.3);
+  margin-top: 0.25rem;
+}
+
+/* ── Summary panel ── */
+.summary {
+  position: sticky;
+  top: 6rem;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 8px;
+  padding: 2rem;
+  background: rgba(10, 10, 10, 0.02);
+}
+
+.summaryTitle {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 10, 0.4);
+  margin-bottom: 1.5rem;
+}
+
+.lineList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.lineItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: rgba(10, 10, 10, 0.6);
+}
+
+.divider {
+  height: 1px;
+  background: rgba(10, 10, 10, 0.08);
+  margin: 1rem 0;
+}
+
+.subRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: rgba(10, 10, 10, 0.5);
+  margin-bottom: 0.4rem;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: rgba(10, 10, 10, 0.95);
+  margin: 1.25rem 0 1.5rem;
+}
+
+.resetBtn {
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.15);
+  border-radius: 6px;
+  color: rgba(10, 10, 10, 0.45);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.resetBtn:hover {
+  border-color: rgba(10, 10, 10, 0.5);
+  color: rgba(10, 10, 10, 0.8);
+}

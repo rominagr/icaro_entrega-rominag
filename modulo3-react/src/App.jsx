@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { motion } from "framer-motion";
 import Navbar from './components/Navbar';
 import NavDots from './components/NavDots';
 import SectionReveal from './components/SectionReveal';
@@ -11,6 +10,7 @@ import Biogr from './pages/Biogr';
 import Ilustracion from './pages/Ilustracion';
 import Grafico from './pages/DisenoGrafico'
 import Tareas from './pages/Tareas'; 
+import CalculadoraComisiones from './pages/calculadoraComisiones';
 import Footermain from './pages/Footermain';
 
 import './App.css';
@@ -29,6 +29,7 @@ function App() {
 <SectionReveal id="ilustracion"><Ilustracion /></SectionReveal>
 <SectionReveal id="Grafico"><Grafico /></SectionReveal>
 <SectionReveal id="tareas"><Tareas /></SectionReveal>
+<SectionReveal id="CalculadoraComisiones"><CalculadoraComisiones /></SectionReveal>
             <div id="footermain"><Footermain /></div>
           </div>
         } />

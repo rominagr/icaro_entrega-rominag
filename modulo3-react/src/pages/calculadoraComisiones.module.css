@@ -1,0 +1,26 @@
+.ilustracion {
+  
+  padding: 6rem 2rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+css.titleWrapper {
+  margin-bottom: 3rem;
+  color: var(--black);
+}
+
+.calculadoraWrapper {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .ilustracion {
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .titleWrapper {
+    margin-bottom: 2rem;
+  }
+}
