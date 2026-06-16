@@ -227,3 +227,38 @@
     gap: 3rem;
   }
 }
+
+.behanceLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, 0.3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.behanceLink:hover { color: rgba(245, 245, 240, 0.9); }
+
+.behanceLinkPreview {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, 0.4);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245, 245, 240, 0.15);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.behanceLinkPreview:hover {
+  color: rgba(245, 245, 240, 0.9);
+  border-color: rgba(245, 245, 240, 0.5);
+}
